@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="main.css">
+<title>Document</title>
+</head>
+<body>
+<header>
+    <hgroup>
+        <h1>Sonus</h1>
+        <p>escolha o som de acordo com o seu humor</p>
+    </hgroup>
+    <nav>
+        <button type="button" class="ativo" onclick="filtrarSonsPorCategoria('Todos'); botaoAtivo(this)">Todos</button>
+        <button type="button" class="" onclick="filtrarSonsPorCategoria('Foco'); botaoAtivo(this)">Foco</button>
+        <button type="button" class="" onclick="filtrarSonsPorCategoria('Sono'); botaoAtivo(this)">Sono</button>
+        <button type="button" class="" onclick="filtrarSonsPorCategoria('Inspirador'); botaoAtivo(this)">Inspirador</button>
+    </nav>
+</header>
+<main id="grade-sons">
+
+</main>
+<footer>
+    <button class="play-button"
+    type="button"><svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="35px" fill=""><path d="M320-200v-560l440 280-440 280Zm80-280Zm0 134 210-134-210-134v268Z"/></svg></button>
+    <audio id="audio1" src="" controls preload="auto"></audio>
+    <audio id="audio2" src="" controls preload="auto"></audio>
+    <p class="nome-som"></p>
+</footer>
+<script src="scripts.js"></script>
+</body>
+</html>

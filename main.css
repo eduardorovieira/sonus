@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #272727;
+    color: #333;
+    margin-bottom: 80px; /* Espaço para o footer fixo */
+}
+
+header {
+    background-color: #3e004f;
+    color: rgb(255, 254, 254);
+    padding: 10px;
+    text-align: left;
+}
+hgroup {
+    margin-bottom: 15px;
+}
+
+nav {
+    background-color: #fee3ff36;
+    padding: 10px;
+    border-radius: 20px;
+    overflow-x: auto;
+    display: flex;
+}
+
+nav button {
+    background-color: #9c0099;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 16px;
+}
+
+.ativo {
+    background-color: #ffffff; /* Ou a cor de destaque do seu site */
+    color: #000000;
+    font-weight: bold;
+    border: 2px solid #ffffff;
+    transform: scale(1.05);
+}
+
+#grade-sons {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    max-width: 95vw;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.card {
+
+    border-radius: 10px;
+    padding: 10px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    background-color: rgb(86, 99, 113);
+}
+
+.card-ativo {
+    background-color: #fff9f9d2;
+}
+
+.capa {
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 15px;
+    margin-right: 15px;
+}
+
+.capa img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+footer {
+    background-color: #3e004f65;
+    color: rgb(255, 254, 254);
+    padding: 10px;
+    text-align: left;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-items: center;
+    max-width: 90vw;
+    margin-bottom: 10px;
+    border-radius: 50px;
+}
+
+footer p {
+    background-color: rgb(86, 99, 113);
+    border-radius: 50px;
+    padding: 15px;
+    justify-content: center;
+    text-wrap: nowrap;
+}
+
+audio {
+    display: none;
+}
+
+.play-button {
+    background-color: rgb(6, 6, 6);
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
