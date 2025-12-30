@@ -15,7 +15,7 @@ const playButton = document.querySelector('.play-button');
 const nomeAudio = document.querySelector('.nome-som');
 
 //url da minha API no Firestore
-const urlApi = "https://firestore.googleapis.com/v1/projects/sonus-openapi/databases/(default)/documents/playlist";
+const urlApi = CONFIG.API_URL;
 
 
 function alternarEntrePlayers() {

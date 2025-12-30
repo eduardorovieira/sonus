@@ -1,21 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap');
+
+
+:root {
+    --fonte-principal: font-family: "Google Sans Flex", sans-serif;
+
+    /*escuro*/
+    --cor-primaria-escura: #253237;
+    --cor-secundaria-escura: #fee3ff36;
+    --cor-terciaria-escura: #9db4c0;
+    /*claro*/
+
+    --cor-primaria-clara: #9db4c0;
+    --cor-secundaria-clara: #c2dfe3;
+    --cor-terciaria-clara: #e0fbfc;
+
+
+}
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #272727;
+    font-family: var(--fonte-principal);
+    background-color: #253237f3;;
     color: #333;
     margin-bottom: 80px; /* Espaço para o footer fixo */
 }
 
 header {
-    background-color: #3e004f;
+    background-color: var(--cor-primaria-escura);
     color: rgb(255, 254, 254);
     padding: 10px;
     text-align: left;
 }
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 5px;
+}
+
 hgroup {
     margin-bottom: 15px;
 }
@@ -29,7 +56,7 @@ nav {
 }
 
 nav button {
-    background-color: #9c0099;
+    background-color: var(--cor-primaria-escura);
     color: white;
     border: none;
     padding: 10px 15px;
@@ -58,35 +85,37 @@ nav button {
 .card {
 
     border-radius: 10px;
-    padding: 10px;
+    padding: 5px;
     text-align: left;
     display: flex;
     align-items: center;
-    background-color: rgb(86, 99, 113);
+    background-color: var(--cor-primaria-escura);
+    color: rgb(255, 255, 255);
+    font-size: 0.9rem;
 }
 
 .card-ativo {
-    background-color: #fff9f9d2;
+    background-color: var(--cor-primaria-clara);
+    color: rgb(0, 0, 0);
 }
 
 .capa {
     flex-shrink: 0;
-    width: 100px;
-    height: 100px;
+    width: 12%;
     overflow: hidden;
-    border-radius: 15px;
-    margin-right: 15px;
+
 }
 
 .capa img {
-    width: 100%;
-    height: 100%;
+    width: 80%;
     object-fit: cover;
+    border-radius: 10px;
+    margin-left: 4px;
 }
 
 
 footer {
-    background-color: #3e004f65;
+    background-color: var(--cor-primaria-escura);
     color: rgb(255, 254, 254);
     padding: 10px;
     text-align: left;
@@ -108,7 +137,7 @@ footer {
 }
 
 footer p {
-    background-color: rgb(86, 99, 113);
+    background-color: #fee3ff36;
     border-radius: 50px;
     padding: 15px;
     justify-content: center;
@@ -120,7 +149,7 @@ audio {
 }
 
 .play-button {
-    background-color: rgb(6, 6, 6);
+    background-color: var(--cor-terciaria-escura);
     border: none;
     cursor: pointer;
     border-radius: 50%;
