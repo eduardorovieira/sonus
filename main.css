@@ -83,11 +83,13 @@ nav button {
 }
 
 .card {
-
+    gap: 1rem;
     border-radius: 10px;
     padding: 5px;
     text-align: left;
     display: flex;
+    flex-direction: row;
+    justify-content: start;
     align-items: center;
     background-color: var(--cor-primaria-escura);
     color: rgb(255, 255, 255);
@@ -99,25 +101,31 @@ nav button {
     color: rgb(0, 0, 0);
 }
 
-.capa {
-    flex-shrink: 0;
-    width: 12%;
-    overflow: hidden;
-
+.info {
+    flex-grow: 1;
 }
 
+
+.card img {
+    flex-shrink: 0;
+    min-width: 70px;
+    max-width: 70px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+/*
 .capa img {
-    width: 80%;
+    width: 100%;
     object-fit: cover;
     border-radius: 10px;
     margin-left: 4px;
 }
-
+*/
 
 footer {
     background-color: var(--cor-primaria-escura);
     color: rgb(255, 254, 254);
-    padding: 10px;
+    padding: 6px 8px;
     text-align: left;
     position: fixed;
     bottom: 0;
@@ -153,6 +161,6 @@ audio {
     border: none;
     cursor: pointer;
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
 }

@@ -107,9 +107,7 @@ function gerarGrid(sons) {
         const url_audio = campos.url_audio ? campos.url_audio.stringValue : "";
         const cardHtml = 
         `<article class="card card-ativo" onclick="tocarSom('${url_audio}', '${titulo}'); cardAtivo(this);">
-                <div class="capa">
                 <img src="${url_capa}" alt="Capa de ${titulo}" class="card-capa"/>
-                </div>
                 <div class="info">
                     <h3>${titulo}</h3>
                     <span>${categoria}</span>
