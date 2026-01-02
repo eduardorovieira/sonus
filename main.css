@@ -55,13 +55,16 @@ header p {
     font-size: 1.2rem;
     color: #ffffffcc;
     margin-bottom: 1rem;
-    margin-left: 3rem;
+    text-align: center;
 }
 hgroup {
     margin: 0.5rem 0;
     display: flex;
     gap: 1rem;
-    margin-left: 3rem;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+
 }
 
 nav {
