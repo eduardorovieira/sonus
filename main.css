@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap');
 
+@import url(fontes/GoogleSansFlex-VariableFont_GRAD\,ROND\,opsz\,slnt\,wdth\,wght.ttf);
 
 :root {
-    --fonte-principal: font-family: "Google Sans Flex", sans-serif;
+    --fonte-principal: 'Google Sans Flex', sans-serif;
 
     /*escuro*/
     --cor-primaria-escura: #253237;
@@ -36,15 +36,32 @@ header {
     color: rgb(255, 254, 254);
     padding: 10px;
     text-align: left;
+    padding-bottom: 1.5rem;
 }
 
+.logo {
+    max-width: 60px;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+    background-color: none;
+}
 header h1 {
     font-size: 3rem;
     margin-bottom: 5px;
 }
 
+header p {
+    font-size: 1.2rem;
+    color: #ffffffcc;
+    margin-bottom: 1rem;
+    margin-left: 3rem;
+}
 hgroup {
-    margin-bottom: 15px;
+    margin: 0.5rem 0;
+    display: flex;
+    gap: 1rem;
+    margin-left: 3rem;
 }
 
 nav {
@@ -53,6 +70,8 @@ nav {
     border-radius: 20px;
     overflow-x: auto;
     display: flex;
+    max-width: 95vw;
+    margin: auto;
 }
 
 nav button {
@@ -63,6 +82,11 @@ nav button {
     margin-right: 10px;
     cursor: pointer;
     border-radius: 16px;
+}
+
+nav button:active {
+    transform: scale(0.95);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .ativo {
@@ -99,6 +123,8 @@ nav button {
 .card-ativo {
     background-color: var(--cor-primaria-clara);
     color: rgb(0, 0, 0);
+    transform: scale(1.01);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .info {
@@ -113,14 +139,6 @@ nav button {
     object-fit: cover;
     border-radius: 10px;
 }
-/*
-.capa img {
-    width: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-left: 4px;
-}
-*/
 
 footer {
     background-color: var(--cor-primaria-escura);
@@ -130,7 +148,6 @@ footer {
     position: fixed;
     bottom: 0;
     left: 50%;
-    transform: translateX(-50%);
     width: fit-content;
     display: flex;
     justify-content: center;
@@ -142,6 +159,11 @@ footer {
     max-width: 90vw;
     margin-bottom: 10px;
     border-radius: 50px;
+    transform: translateX(-50%) translateY(0);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 1000;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 footer p {
@@ -150,7 +172,9 @@ footer p {
     padding: 15px;
     justify-content: center;
     text-wrap: nowrap;
+
 }
+
 
 audio {
     display: none;
@@ -163,4 +187,12 @@ audio {
     border-radius: 50%;
     width: 50px;
     height: 50px;
+}
+
+.play-button:active {
+    transform: scale(0.90);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.oculto {
+    transform: translateX(-50%) translateY(150%);
 }

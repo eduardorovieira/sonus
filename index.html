@@ -5,14 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="main.css">
 <script src="config.js"></script>
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png">
+<link rel="manifest" href="/favicon_io/site.webmanifest">
+<link rel="shortcut icon" href="/favicon_io/nebula.ico" type="image/x-icon">
 <title>SONUS</title>
 </head>
 <body>
 <header>
     <hgroup>
+        <img src="favicon_io/nebula.png" alt="SONUS Logo" class="logo">
         <h1>SONUS</h1>
-        <p>escolha o som de acordo com o seu humor</p>
     </hgroup>
+    <p>escolha o som de acordo com o seu humor</p>
     <nav>
         <button type="button" class="ativo" onclick="filtrarSonsPorCategoria('Todos'); botaoAtivo(this)">Todos</button>
         <button type="button" class="" onclick="filtrarSonsPorCategoria('Foco'); botaoAtivo(this)">Foco</button>
@@ -23,12 +27,14 @@
 <main id="grade-sons">
 
 </main>
-<footer>
+<footer class="oculto">
     <button class="play-button"
     type="button"><svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="35px" fill=""><path d="M320-200v-560l440 280-440 280Zm80-280Zm0 134 210-134-210-134v268Z"/></svg></button>
     <audio id="audio1" src="" controls preload="auto"></audio>
     <audio id="audio2" src="" controls preload="auto"></audio>
-    <p class="nome-som"></p>
+    <p class="nome-som">
+        <img class="capa-som" src="" alt="">
+    </p>
 </footer>
 <script src="scripts.js"></script>
 </body>

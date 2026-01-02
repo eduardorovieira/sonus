@@ -1,6 +1,6 @@
 //icones de play e pause em SVG
-const pauseIcon = `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3ff"><path d="M525-200v-560h235v560H525Zm-325 0v-560h235v560H200Zm385-60h115v-440H585v440Zm-325 0h115v-440H260v440Zm0-440v440-440Zm325 0v440-440Z"/></svg>`;
-const playIcon = `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3ff"><path d="M323.5-208.5v-549l431 274.5-431 274.5ZM381-483Zm0 170 267.5-170L381-653v340Z"/></svg>`;
+const pauseIcon = `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#253237"><path d="M525-200v-560h235v560H525Zm-325 0v-560h235v560H200Zm385-60h115v-440H585v440Zm-325 0h115v-440H260v440Zm0-440v440-440Zm325 0v440-440Z"/></svg>`;
+const playIcon = `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#253237"><path d="M323.5-208.5v-549l431 274.5-431 274.5ZM381-483Zm0 170 267.5-170L381-653v340Z"/></svg>`;
 
 //mixers
 const players =[document.querySelector('#audio1'), document.querySelector('#audio2')];
@@ -13,6 +13,8 @@ let todosOsSons = [];
 //itens do html que vou manipular
 const playButton = document.querySelector('.play-button');
 const nomeAudio = document.querySelector('.nome-som');
+const footerElement = document.querySelector('footer');
+const imgFooter = document.querySelector('.capa-som');
 
 //url da minha API no Firestore
 const urlApi = CONFIG.API_URL;
@@ -62,7 +64,7 @@ function tocarSom(url, titulo) {
     somAtual = url;
     nomeAudio.innerText = titulo;
     playButton.innerHTML = pauseIcon;
-
+    footerElement.classList.remove('oculto');
     players.forEach(p => {
         p.pause();
         p.currentTime = 0;
@@ -105,8 +107,9 @@ function gerarGrid(sons) {
         const categoria = campos.categoria ? campos.categoria.stringValue : "Categoria Desconhecida";
         const url_capa = campos.url_capa ? campos.url_capa.stringValue : "";
         const url_audio = campos.url_audio ? campos.url_audio.stringValue : "";
+        const cardSelecionado = (somAtual === url_audio) ? "card-ativo" : "";
         const cardHtml = 
-        `<article class="card card-ativo" onclick="tocarSom('${url_audio}', '${titulo}'); cardAtivo(this);">
+        `<article class="card ${cardSelecionado}" onclick="tocarSom('${url_audio}', '${titulo}', '${url_capa}'); cardAtivo(this);">
                 <img src="${url_capa}" alt="Capa de ${titulo}" class="card-capa"/>
                 <div class="info">
                     <h3>${titulo}</h3>
@@ -121,6 +124,7 @@ function gerarGrid(sons) {
 //evento de clique no botão de play/pause
 playButton.addEventListener('click', () => {
     const pAtivo = players[playerAtivo];
+    
     if (pAtivo.paused) {
         pAtivo.play();
         playButton.innerHTML = pauseIcon;
