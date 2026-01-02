@@ -93,7 +93,7 @@ nav button:active {
 }
 
 .ativo {
-    background-color: #ffffff; /* Ou a cor de destaque do seu site */
+    background-color: #ffffff;
     color: #000000;
     font-weight: bold;
     border: 2px solid #ffffff;
