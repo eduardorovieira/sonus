@@ -22,6 +22,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent; /* isso aqui está removendo o destaque azul claro que aparece quando eu clico em algum botão ou outros elementos tocaveis/clicaveis em dispositivos com tela touch */
 }
 
 body {
