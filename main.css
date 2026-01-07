@@ -5,7 +5,7 @@
     --fonte-principal: 'Google Sans Flex', sans-serif;
 
     /*escuro*/
-    --cor-primaria-escura: #253237;
+    --cor-primaria-escura: #253237c5;
     --cor-secundaria-escura: #fee3ff36;
     --cor-terciaria-escura: #9db4c0;
     /*claro*/
@@ -38,6 +38,7 @@ header {
     padding: 10px;
     text-align: left;
     padding-bottom: 1.5rem;
+    box-shadow: 3px 3px 10px #0000003f;
 }
 
 .logo {
@@ -53,7 +54,7 @@ header h1 {
 }
 
 header p {
-    font-size: 1.2rem;
+    font-size: clamp(0.4rem, 1rem, 1.5rem);
     color: #ffffffcc;
     margin-bottom: 1rem;
     text-align: center;
@@ -76,6 +77,7 @@ nav {
     display: flex;
     max-width: 95vw;
     margin: auto;
+    scrollbar-width: none;
 }
 
 nav button {
@@ -88,17 +90,25 @@ nav button {
     border-radius: 16px;
 }
 
-nav button:active {
-    transform: scale(0.95);
-    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
+
+h3, span, button {
+        font-size: clamp(0.8rem, 1.5vh, 1.2rem);
+    }
 
 .ativo {
-    background-color: #ffffff;
+    background-color: #ffffffd3;
     color: #000000;
     font-weight: bold;
-    border: 2px solid #ffffff;
-    transform: scale(1.05);
+    transform: scale(1.02);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: inset 0 0 3px #0000003f;
+    
+}
+
+.ativo:hover {
+    transform: scale(1.02);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: inset 0 0 3px #fcfcfc3f;
 }
 
 #grade-sons {
@@ -122,6 +132,7 @@ nav button:active {
     background-color: var(--cor-primaria-escura);
     color: rgb(255, 255, 255);
     font-size: 0.9rem;
+    box-shadow: 1px 1px 1px #0000002f;
 }
 
 .card-ativo {
@@ -129,6 +140,12 @@ nav button:active {
     color: rgb(0, 0, 0);
     transform: scale(1.01);
     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover {
+    transform: scale(1.02);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: inset 0 0 3px #fcfcfc3f;
 }
 
 .info {
@@ -146,6 +163,7 @@ nav button:active {
 
 footer {
     background-color: var(--cor-primaria-escura);
+    backdrop-filter: blur(10px);
     color: rgb(255, 254, 254);
     padding: 6px 8px;
     text-align: left;
@@ -153,7 +171,6 @@ footer {
     bottom: 0;
     left: 50%;
     width: fit-content;
-    display: flex;
     justify-content: center;
     gap: 10px;
     align-items: center;
@@ -168,6 +185,7 @@ footer {
     z-index: 1000;
     white-space: nowrap;
     overflow: hidden;
+    box-shadow: 3px 5px 10px #0000003f;
 }
 
 footer p {
@@ -176,6 +194,8 @@ footer p {
     padding: 15px;
     justify-content: center;
     text-wrap: nowrap;
+    backdrop-filter: blur(10px);
+    font-weight: normal;
 
 }
 
@@ -199,4 +219,48 @@ audio {
 }
 .oculto {
     transform: translateX(-50%) translateY(150%);
+}
+
+@media screen and (min-width: 600px) {
+    header h1 {
+        font-size: 4rem;
+    }
+
+    #grade-sons {
+        max-width: 85vw;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    header p {
+        font-size: 1.5rem;
+    }
+
+    .card img {
+        max-width: 100px;
+    }
+
+    .card {
+        font-size: clamp(0.4rem, 2vw, 1.2rem);
+    }
+    
+}
+
+@media screen and (min-width: 900px) {
+    nav {
+        max-width: 80vw;
+    }
+
+    #grade-sons {
+        max-width: 85vw;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+    
+    .card img {
+        max-width: 100px;
+        font-size: clamp(0.4rem, 1vh);
+    }
 }
