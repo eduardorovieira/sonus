@@ -1,6 +1,6 @@
 //icones de play e pause em SVG
-const pauseIcon = `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#253237"><path d="M525-200v-560h235v560H525Zm-325 0v-560h235v560H200Zm385-60h115v-440H585v440Zm-325 0h115v-440H260v440Zm0-440v440-440Zm325 0v440-440Z"/></svg>`;
-const playIcon = `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#253237"><path d="M323.5-208.5v-549l431 274.5-431 274.5ZM381-483Zm0 170 267.5-170L381-653v340Z"/></svg>`;
+const pauseIcon = `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff"><path d="M525-200v-560h235v560H525Zm-325 0v-560h235v560H200Zm385-60h115v-440H585v440Zm-325 0h115v-440H260v440Zm0-440v440-440Zm325 0v440-440Z"/></svg>`;
+const playIcon = `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffffff"><path d="M323.5-208.5v-549l431 274.5-431 274.5ZM381-483Zm0 170 267.5-170L381-653v340Z"/></svg>`;
 
 //mixers
 const players =[document.querySelector('#audio1'), document.querySelector('#audio2')];
@@ -60,10 +60,11 @@ function configuraLoopFade(player) {
     };
 };
 //função para tocar o som quando o card for clicado
-function tocarSom(url, titulo) {
+function tocarSom(url, titulo, url_Capa) {
     somAtual = url;
     nomeAudio.innerText = titulo;
     playButton.innerHTML = pauseIcon;
+    playButton.style.backgroundImage = `url('${url_Capa}')`;
     footerElement.classList.remove('oculto');
     players.forEach(p => {
         p.pause();

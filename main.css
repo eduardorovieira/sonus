@@ -206,6 +206,7 @@ audio {
 
 .play-button {
     background-color: var(--cor-terciaria-escura);
+    background-size: cover;
     border: none;
     cursor: pointer;
     border-radius: 50%;
