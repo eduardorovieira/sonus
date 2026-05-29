@@ -17,15 +17,16 @@
 
 }
 
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent; /* isso aqui está removendo o destaque azul claro que aparece quando eu clico em algum botão ou outros elementos tocaveis/clicaveis em dispositivos com tela touch */
+    transition: background-color 0.8s, color 0.8s;
 }
 
 body {
+    min-width: 100%;
     font-family: var(--fonte-principal);
     background-color: #253237f3;;
     color: #333;
@@ -39,18 +40,42 @@ header {
     text-align: left;
     padding-bottom: 1.5rem;
     box-shadow: 3px 3px 10px #0000003f;
+    min-width: 100%
+}
+#theme {
+    border-radius: 50%;
+    background-color: var(--cor-secundaria-escura);
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
 }
 
+#theme-button {
+    border-radius: 50%;
+    background: white;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    transform: scale(0.95);
+    align-self: center;
+
+}
 .logo {
     max-width: 60px;
     height: auto;
     display: block;
     margin-bottom: 10px;
     background-color: none;
+    min-width: 5%;
 }
 header h1 {
-    font-size: 3rem;
     margin-bottom: 5px;
+    font-size: clamp(1.5rem, 4rem);
 }
 
 header p {
@@ -264,4 +289,35 @@ audio {
         max-width: 100px;
         font-size: clamp(0.4rem, 1vh);
     }
+}
+
+/*dark mode*/
+
+#theme-button.dark {
+    background-color: var(--cor-primaria-clara);
+    color: #333;
+}
+header.dark {
+    background-color: var(--cor-primaria-clara);
+    color: #333;
+}
+
+body.dark {
+    background-color: white;
+    color: #333;
+}
+
+.card.dark {
+    background-color: var(--cor-primaria-clara);
+    color: #333;
+}
+
+
+.card.card-ativo.dark {
+    background-color: black;
+    color: #fbf7f7;
+}
+
+.dark {
+    transition: all 0.8s;
 }

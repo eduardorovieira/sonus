@@ -15,9 +15,11 @@ const playButton = document.querySelector('.play-button');
 const nomeAudio = document.querySelector('.nome-som');
 const footerElement = document.querySelector('footer');
 const imgFooter = document.querySelector('.capa-som');
+const darkModeButton = document.querySelector('#theme-button');
 
 //url da minha API no Firestore
 const urlApi = CONFIG.API_URL;
+
 
 
 function alternarEntrePlayers() {
@@ -180,3 +182,11 @@ function cardAtivo(card) {
         card.classList.add('card-ativo');
     }
 }
+
+//darkmode
+
+darkModeButton.addEventListener('click', () => {
+document.querySelector('body').classList.toggle('dark');
+document.querySelector('#header').classList.toggle('dark');
+document.querySelectorAll('.card').forEach(card => card.classList.toggle('dark'));   
+});
