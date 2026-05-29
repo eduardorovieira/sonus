@@ -194,7 +194,7 @@ atualizarIconeTema();
 });
 
 function atualizarIconeTema() {
-    const isDarkMode = document.querySelector("#theme-button").classList.contains("dark");
+    const isDarkMode = document.body.classList.contains("dark");
     darkModeButton.innerHTML = isDarkMode ? lightModeIcon : darkModeIcon;
 };
 atualizarIconeTema();
