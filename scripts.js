@@ -188,15 +188,9 @@ function cardAtivo(card) {
 //darkmode
 
 darkModeButton.addEventListener('click', () => {
-    document.querySelector('body').classList.toggle('dark');
-    document.querySelector('nav').classList.toggle('dark');
-    document.querySelector('p').classList.toggle('dark');
-    document.querySelector('footer').classList.toggle('dark');
-    document.querySelector('#theme-button').classList.toggle('dark');
-    document.querySelector('#header').classList.toggle('dark');
-    document.querySelectorAll('.card').forEach(card => card.classList.toggle('dark'));
+    document.body.classList.toggle('dark');
 
-    atualizarIconeTema();
+atualizarIconeTema();
 });
 
 function atualizarIconeTema() {

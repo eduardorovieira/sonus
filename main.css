@@ -1,18 +1,17 @@
 
 @import url(fontes/GoogleSansFlex-VariableFont_GRAD\,ROND\,opsz\,slnt\,wdth\,wght.ttf);
 
-:root {
-    --fonte-principal: 'Google Sans Flex', sans-serif;
 
-    /*padão*/
+:root {
     --cor-standard: #fffcf2;
     --cor-destaque: #3d348b;
     --cor-destaque-transparente: #3d348b36;
     --texto-standard: #252422;
-    --texto-secundario:#fffcf2;
+    --texto-secundario: #fffcf2;
     --sombra: #0000003f;
+}
 
-    /*dark mode*/
+    /*dark mode
     --cor-standard-dark:#252422;
     --cor-destaque-dark:#6096babe;
     --cor-destaque-transparente-dark:#6096ba36;
@@ -21,8 +20,7 @@
     --card-ativo-dark:#3d348b;
     --sombra-dark: #f8f6f652;
 
-
-}
+*/
 
 * {
     margin: 0;
@@ -124,7 +122,7 @@ nav {
 }
 
 nav button {
-    background-color: var(--cor-primaria-escura);
+    background-color: var(--cor-standard);
     color: var(--texto-standard);
     border: none;
     padding: 10px 15px;
@@ -311,43 +309,11 @@ audio {
 }
 
 /*dark mode*/
-
-#theme-button.dark {
-    background-color: var(--cor-destaque-dark);
-    color: #333;
-}
-header.dark {
-    background-color: var(--cor-standard-dark);
-    color: var(--texto-standard-dark);
-}
-p.dark {
-    color: var(--texto-standard-dark);
-}
-
 body.dark {
-    background-color: var(--cor-standard-dark);
-    color: var(--texto-standard-dark);
-}
-
-nav.dark {
-    background-color: var(--cor-destaque-dark);
-    color: var(--texto-standard-dark);
-    box-shadow: 1px 1px 1px var(--sombra-dark);
-}
-
-.card.dark {
-    background-color: var(--cor-destaque-dark);
-    color: #333;
-    box-shadow: 1px 1px 1px var(--sombra-dark);
-}
-
-
-.card.card-ativo.dark {
-    background-color: var(--card-ativo-dark);
-    color: #fbf7f7;
-    box-shadow: inset 0 0 3px var(--sombra-dark);
-}
-
-.dark {
-    transition: all 0.8s;
+    --cor-standard: #252422;
+    --cor-destaque: #6096babe;
+    --cor-destaque-transparente: #6096ba36;
+    --texto-standard: #fffcf2;
+    --texto-secundario: #252422;
+    --sombra: #f8f6f652;
 }
