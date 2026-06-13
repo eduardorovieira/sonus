@@ -10,16 +10,6 @@
     --sombra: #0000003f;
 }
 
-    /*dark mode
-    --cor-standard-dark:#252422;
-    --cor-destaque-dark:#6096babe;
-    --cor-destaque-transparente-dark:#6096ba36;
-    --texto-standard-dark:#fffcf2;
-    --texto-secundario-dark:#252422;
-    --card-ativo-dark:#3d348b;
-    --sombra-dark: #f8f6f652;
-
-*/
 
 * {
     margin: 0;
@@ -141,14 +131,14 @@ h3, span, button {
     color: var(--texto-secundario);
     font-weight: normal;
     transform: scale(1.01);
-    transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: 0.3s;
     box-shadow: inset 0 0 3px var(--sombra);
     
 }
 
 .ativo:hover {
     transform: scale(1.02);
-    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: 0.5s;
     box-shadow: inset 0 0 3px var(--sombra);
 }
 
@@ -311,9 +301,9 @@ audio {
 /*dark mode*/
 body.dark {
     --cor-standard: #252422;
-    --cor-destaque: #6096babe;
-    --cor-destaque-transparente: #6096ba36;
+    --cor-destaque: #3d348b;
+    --cor-destaque-transparente: #3d348b36;
     --texto-standard: #fffcf2;
-    --texto-secundario: #252422;
+    --texto-secundario: #fffcf2;
     --sombra: #f8f6f652;
 }
