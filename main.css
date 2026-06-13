@@ -1,5 +1,4 @@
-
-@import url(fontes/GoogleSansFlex-VariableFont_GRAD\,ROND\,opsz\,slnt\,wdth\,wght.ttf);
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 
 :root {
@@ -32,7 +31,7 @@
 
 body {
     min-width: 100%;
-    font-family: var(--fonte-principal);
+    font-family: "Roboto", sans-serif;
     background-color: var(--cor-standard);
     color: var(--texto-standard);
     margin-bottom: 80px; /* Espaço para o footer fixo */
@@ -181,12 +180,13 @@ h3, span, button {
     background-color: var(--cor-destaque);
     color: var(--texto-secundario);
     transform: scale(1.01);
-    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: 0.3s;
 }
+
 
 .card:hover {
     transform: scale(1.01);
-    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: 0.3s;
     box-shadow: inset 0 0 3px var(--sombra);
 }
 
