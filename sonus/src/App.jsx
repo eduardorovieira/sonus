@@ -1,0 +1,41 @@
+import nebula from './assets/nebula.png';
+
+function App() {
+
+  return (  
+    <div>
+      <header id="header">
+            <hgroup>
+                <img src={nebula} alt="SONUS Logo" class="logo"/>
+                <h1>SONUS</h1>
+            </hgroup>
+                    <div class="theme" id="theme">
+                    <button id="theme-button" type="button">
+                    
+                    </button>
+                </div>
+            <p>escolha o som de acordo com o seu momento</p>
+            <nav>
+                <button type="button" class="ativo" onclick="filtrarSonsPorCategoria('Todos'); botaoAtivo(this)">Todos</button>
+                <button type="button" class="" onclick="filtrarSonsPorCategoria('Foco'); botaoAtivo(this)">Foco</button>
+                <button type="button" class="" onclick="filtrarSonsPorCategoria('Sono'); botaoAtivo(this)">Sono</button>
+                <button type="button" class="" onclick="filtrarSonsPorCategoria('Inspirador'); botaoAtivo(this)">Inspirador</button>
+            </nav>
+        </header>
+        <main id="grade-sons">
+        
+        </main>
+        <footer class="oculto">
+            <button class="play-button"
+            type="button"><svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="35px" fill=""><path d="M320-200v-560l440 280-440 280Zm80-280Zm0 134 210-134-210-134v268Z"/></svg></button>
+            <audio id="audio1" src="" controls preload="auto"></audio>
+            <audio id="audio2" src="" controls preload="auto"></audio>
+            <p class="nome-som">
+                <img class="capa-som" src="" alt=""/>
+            </p>
+        </footer>
+    </div>
+  )
+}
+
+export default App
