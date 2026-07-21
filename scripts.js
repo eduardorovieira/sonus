@@ -14,7 +14,8 @@ const htmlItems = {
     audioName: document.querySelector('.nome-som'),
     footerElement: document.querySelector('footer'),
     imgFooter: document.querySelector('.capa-som'),
-    darkModeButton: document.querySelector('#theme-button')
+    darkModeButton: document.querySelector('#theme-button'),
+    principalColorMeta: document.querySelector('#principal-color')
 };
 
 //vetor com a ordem dos arquivos de áudio
@@ -196,6 +197,8 @@ function cardAtivo(card) {
 function atualizarIconeTema() {
     const isDarkMode = document.body.classList.contains("dark");
     htmlItems.darkModeButton.innerHTML = isDarkMode ? iconsSVG.lightModeIcon : iconsSVG.darkModeIcon;
+
+    htmlItems.principalColorMeta.setAttribute("content", isDarkMode ? "#252422" : "#3d348b")
 };
 atualizarIconeTema();
 
