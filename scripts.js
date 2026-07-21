@@ -198,7 +198,7 @@ function atualizarIconeTema() {
     const isDarkMode = document.body.classList.contains("dark");
     htmlItems.darkModeButton.innerHTML = isDarkMode ? iconsSVG.lightModeIcon : iconsSVG.darkModeIcon;
 
-    htmlItems.principalColorMeta.setAttribute("content", isDarkMode ? "#252422" : "#3d348b")
+    htmlItems.principalColorMeta.setAttribute("content", isDarkMode ? "#252422" : "#fffcf2")
 };
 atualizarIconeTema();
 
