@@ -192,25 +192,34 @@ function cardAtivo(card) {
     }
 }
 
-//darkmode
-
-
+//theme toggle
 function atualizarIconeTema() {
     const isDarkMode = document.body.classList.contains("dark");
     htmlItems.darkModeButton.innerHTML = isDarkMode ? iconsSVG.lightModeIcon : iconsSVG.darkModeIcon;
 };
+atualizarIconeTema();
 
 function saveUserThemePreference() {
     const lastThemeChoice = document.body.classList.contains("dark") ? "dark" : "light";
     localStorage.setItem("userThemePreference", lastThemeChoice);
 };
+saveUserThemePreference();
+
+function loadUserThemePreference() {
+    const savedTheme = localStorage.getItem("userThemePreference");
+
+    if (savedTheme === "dark") {
+        document.body.classList.add("dark");
+    }
+    
+    atualizarIconeTema();
+};
+loadUserThemePreference();
+
 
 htmlItems.darkModeButton.addEventListener('click', () => {
     document.body.classList.toggle('dark');
-
-atualizarIconeTema();
-saveUserThemePreference();
+    
+    atualizarIconeTema();
+    saveUserThemePreference();
 });
-
-atualizarIconeTema();
-saveUserThemePreference();
