@@ -203,7 +203,6 @@ function saveUserThemePreference() {
     const lastThemeChoice = document.body.classList.contains("dark") ? "dark" : "light";
     localStorage.setItem("userThemePreference", lastThemeChoice);
 };
-saveUserThemePreference();
 
 function loadUserThemePreference() {
     const savedTheme = localStorage.getItem("userThemePreference");
@@ -211,7 +210,6 @@ function loadUserThemePreference() {
     if (savedTheme === "dark") {
         document.body.classList.add("dark");
     }
-    
     atualizarIconeTema();
 };
 loadUserThemePreference();
