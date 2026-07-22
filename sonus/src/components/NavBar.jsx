@@ -1,20 +1,19 @@
-import { useState, useRef } from 'react';
+import {useState} from 'react';
 
-function NavBar() {
-
-    const handleCategoryClick = (category) => {
-        filtrarSonsPorCategoria(category);
+function NavBar({sortSongsByCategory}) {
+    const [activeCategory, setActiveCategory] = useState('Todos');
+    function handleCategoryClick(category) {
+        setActiveCategory(category);
+        sortSongsByCategory(category);
     }
   return (
-    <div>
         <nav>
-            <button type="button" className="active" onClick={() => handleCategoryClick('Todos')}>Todos</button>
-            <button type="button" className="" onClick={() => handleCategoryClick('Foco')}>Foco</button>
-            <button type="button" className="" onClick={() => handleCategoryClick('Sono')}>Sono</button>
-            <button type="button" className="" onClick={() => handleCategoryClick('Inspirador')}>Inspirador</button>
+            <button type="button" className={activeCategory === 'Todos' ? 'active' : ''} onClick={() => handleCategoryClick('Todos')}>Todos</button>
+            <button type="button" className={activeCategory === 'Foco' ? 'active' : ''} onClick={() => handleCategoryClick('Foco')}>Foco</button>
+            <button type="button" className={activeCategory === 'Sono' ? 'active' : ''} onClick={() => handleCategoryClick('Sono')}>Sono</button>
+            <button type="button" className={activeCategory === 'Inspirador' ? 'active' : ''} onClick={() => handleCategoryClick('Inspirador')}>Inspirador</button>
         </nav>
-    </div>
   )
 }
 
-export default NavBar
+export default NavBar;

@@ -19,6 +19,7 @@ function Header ({theme, setTheme}) {
             <div className="theme" id="theme">
                 <button className="theme-button" type="button" onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>{theme === 'light' ? <DarkModeIcon/> : <LightModeIcon/>}</button>
             </div>
+            <NavBar />
         </header>
     )
 
