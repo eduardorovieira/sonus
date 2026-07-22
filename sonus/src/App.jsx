@@ -1,39 +1,43 @@
-import nebula from './assets/nebula.png';
+import {useState, useRef, useEffect} from 'react';
+
+import Footer from './components/Footer';
+import Header from './components/Header';
+
+
+const urlApi = "https://firestore.googleapis.com/v1/projects/sonus-openapi/databases/(default)/documents/playlist";
+const htmlItems = {
+    playButton: document.querySelector('.play-button'),
+    audioName: document.querySelector('.nome-som'),
+    footerElement: document.querySelector('footer'),
+    imgFooter: document.querySelector('.capa-som'),
+    darkModeButton: document.querySelector('#theme-button'),
+    principalColorMeta: document.querySelector('#principal-color')
+};
+
 
 function App() {
 
+//estado 
+  const [songName, setSongName] = useState('');
+  const [footerVisible, setFooterVisible] = useState(false);
+  const [coverImage, setCoverImage] = useState('');
+  const [theme, setTheme] = useState('light');
+      useEffect(() => {
+        document.body.classList.toggle('dark', theme === 'dark');
+      }, [theme]);
+
+//referencias
+
+  const playButtonRef = useRef(null);
+  const metaTheeRef = useRef(null);
+  const audio1Ref = useRef(null);
+  const audio2Ref = useRef(null);
+
+
   return (  
     <div>
-      <header id="header">
-            <hgroup>
-                <img src={nebula} alt="SONUS Logo" class="logo"/>
-                <h1>SONUS</h1>
-            </hgroup>
-                    <div class="theme" id="theme">
-                    <button id="theme-button" type="button">
-                    
-                    </button>
-                </div>
-            <p>escolha o som de acordo com o seu momento</p>
-            <nav>
-                <button type="button" class="ativo" onclick="filtrarSonsPorCategoria('Todos'); botaoAtivo(this)">Todos</button>
-                <button type="button" class="" onclick="filtrarSonsPorCategoria('Foco'); botaoAtivo(this)">Foco</button>
-                <button type="button" class="" onclick="filtrarSonsPorCategoria('Sono'); botaoAtivo(this)">Sono</button>
-                <button type="button" class="" onclick="filtrarSonsPorCategoria('Inspirador'); botaoAtivo(this)">Inspirador</button>
-            </nav>
-        </header>
-        <main id="grade-sons">
-        
-        </main>
-        <footer class="oculto">
-            <button class="play-button"
-            type="button"><svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="35px" fill=""><path d="M320-200v-560l440 280-440 280Zm80-280Zm0 134 210-134-210-134v268Z"/></svg></button>
-            <audio id="audio1" src="" controls preload="auto"></audio>
-            <audio id="audio2" src="" controls preload="auto"></audio>
-            <p class="nome-som">
-                <img class="capa-som" src="" alt=""/>
-            </p>
-        </footer>
+        <Header   theme={theme} setTheme={setTheme} />
+        <Footer />
     </div>
   )
 }

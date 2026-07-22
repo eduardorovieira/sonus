@@ -48,7 +48,7 @@ header {
     justify-content: center;
 }
 
-#theme-button {
+.theme-button {
     border-radius: 50%;
     background: var(--cor-destaque);
     border: none;
@@ -59,12 +59,12 @@ header {
     align-self: center;
 }
 
-#theme-button > svg {
+.theme-button > svg {
     width: 20px;
     height: 20px;
 }
 
-#theme-button:active, #theme-button > svg:active {
+.theme-button:active, .theme-button > svg:active {
     transform: scale(0.90);
     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
@@ -126,7 +126,7 @@ h3, span, button {
         font-size: clamp(0.8rem, 1.5vh, 1.2rem);
     }
 
-.ativo {
+.active {
     background-color: var(--cor-destaque);
     color: var(--texto-secundario);
     font-weight: normal;
