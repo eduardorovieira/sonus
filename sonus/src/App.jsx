@@ -15,7 +15,7 @@ const urlApi = "https://firestore.googleapis.com/v1/projects/sonus-openapi/datab
       }, [theme]);
 
   const [allSongs, setAllSongs] = useState([]);
-  const [filteredSongs, setFilteredSongs] = useState ([]);
+  const [filteredSongs, setFilteredSongs] = useState([]);
 
   function sortSongsByCategory (category) {
     console.log(category)
