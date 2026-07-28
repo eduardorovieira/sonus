@@ -7,7 +7,7 @@ import LightModeIcon from '../icons/LightModeIcon';
 
 import { useState, useEffect } from 'react';
 
-function Header ({theme, setTheme}) {
+function Header ({theme, setTheme, sortSongsByCategory}) {
 
     return (
         <header>
@@ -19,7 +19,7 @@ function Header ({theme, setTheme}) {
             <div className="theme" id="theme">
                 <button className="theme-button" type="button" onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>{theme === 'light' ? <DarkModeIcon/> : <LightModeIcon/>}</button>
             </div>
-            <NavBar />
+            <NavBar sortSongsByCategory={sortSongsByCategory}/>
         </header>
     )
 

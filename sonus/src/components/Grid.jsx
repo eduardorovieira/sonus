@@ -1,5 +1,5 @@
 
-function Grid({songs, index}) {
+function Grid({songs, index, onSongClick}) {
     return (
         <section id="grade-sons">
             {songs.map(song => {               
@@ -12,7 +12,7 @@ function Grid({songs, index}) {
 
 
                 return (
-                    <article key={index} className="card">
+                    <article key={index} className="card" onClick={() => onSongClick(song)}>
                         <img 
                         src={capa} 
                         alt={`Capa de ${titulo}`} className="card-capa" />
