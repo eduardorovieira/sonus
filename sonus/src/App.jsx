@@ -18,7 +18,7 @@ const urlApi = "https://firestore.googleapis.com/v1/projects/sonus-openapi/datab
   const [filteredSongs, setFilteredSongs] = useState([]);
   const [selectedSong, setSelectedSong] = useState(null);
 
-  function sortSongsByCategory (category) {
+  function filterSongsByCategory (category) {
     if (category === "Todos") {
       setFilteredSongs (allSongs)
       return;
@@ -63,7 +63,7 @@ const urlApi = "https://firestore.googleapis.com/v1/projects/sonus-openapi/datab
   //função utilizada pelo navbar para filtar os sons por categoria
   return (  
     <>
-        <Header   theme={theme} setTheme={setTheme}  sortSongsByCategory={sortSongsByCategory} />
+        <Header   theme={theme} setTheme={setTheme}  filterSongsByCategory={filterSongsByCategory} />
         <Grid songs={filteredSongs} onSongClick={handleSongClick}/>
         <Footer />
     </>
