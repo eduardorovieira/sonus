@@ -1,3 +1,5 @@
+//import CONFIG from './config.js';
+
 const urlApi = CONFIG.API_URL;
 
 //icones em SVG
