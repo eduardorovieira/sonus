@@ -6,12 +6,12 @@ O **SONUS** é uma aplicação web focada em produtividade e bem-estar, projetad
 
 ## 🚀 Tecnologias Utilizadas
 
-- **React** — Biblioteca para construção da interface de usuário
-- **Vite** — Build tool rápida para o ecossistema moderno de front-end
-- **JavaScript (ES6+)** — Lógica da aplicação e manipulação do DOM virtual
-- **CSS3 / CSS Modules** — Estilização moderna, responsiva e suporte a Dark Mode
-- **Google Cloud / Firebase Firestore (API REST)** — Banco de dados no nuvem para gerenciamento dinâmico da playlist
-- **Vercel** — Deploy e hospedagem contínua da aplicação
+- **React**
+- **Vite** 
+- **JavaScript (ES6+)** 
+- **CSS3 / CSS Modules** 
+- **Google Cloud / Firebase Firestore (API REST)**
+- **Vercel**
 
 ---
 
