@@ -51,6 +51,9 @@ function Footer({ selectedSong }) {
     audio1.ontimeupdate = null;
     audio2.ontimeupdate = null;
 
+    audio1.onloadedmetadata = null;
+    audio2.onloadedmetadata = null;
+
     audio1.volume = 1;
     audio2.volume = 0;
 
@@ -88,7 +91,7 @@ function Footer({ selectedSong }) {
     const oldPlayer = getActiveAudioRef().current;
     const newPlayer = getInactiveAudioRef().current;
 
-    newPlayer.src = selectedSongData.audio;
+    newPlayer.src = oldPlayer.src;
     newPlayer.load();
 
     newPlayer.onloadedmetadata = () => {
@@ -118,14 +121,19 @@ function Footer({ selectedSong }) {
 
   // função para lidar com o clique no botão de play/pause. Responsável também pela decisão de qual icone mostrar (play ou pause)
   async function handlePlayPause() {
+
+    const activeAudio = getActiveAudioRef().current;
+
     if (isPlaying) {
       audio1Ref.current.pause();
       audio2Ref.current.pause();
       setIsPlaying(false);
     } else {
       try {
-        await getActiveAudioRef().current.play();
-        setIsPlaying(true);
+        if (acttiveAudio && activeAudio.src) {
+          await activeAudio.play();
+          setIsPlaying(true);
+        }
       } catch (error) {
         console.error("Erro ao reproduzir o áudio:", error);
       }
@@ -136,13 +144,15 @@ function Footer({ selectedSong }) {
   useEffect(() => {
     if (!selectedSong) return;
 
-    resetPlayers();
-
     const audio1 = audio1Ref.current;
     if (!audio1) return;
 
+    resetPlayers();
+
     audio1.src = selectedSongData.audio;
     audio2Ref.current.src = selectedSongData.audio;
+
+    audio1.load();
 
     audio1.play().then(() => {
       setIsPlaying(true);
@@ -151,6 +161,10 @@ function Footer({ selectedSong }) {
       console.error("Erro ao reproduzir o áudio inicial:", error);
       setIsPlaying(false);
     });
+
+    return () => {
+      resetPlayers();
+    };
 
   }, [selectedSong]);
 
