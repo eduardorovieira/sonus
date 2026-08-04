@@ -21,7 +21,7 @@ const urlApi = "https://firestore.googleapis.com/v1/projects/sonus-openapi/datab
       return;
       
     }
-    
+
     const filtered = allSongs.filter(song=> {
       const songCategory = song.fields.categoria?.stringValue;
       
@@ -32,7 +32,7 @@ const urlApi = "https://firestore.googleapis.com/v1/projects/sonus-openapi/datab
     setFilteredSongs(filtered);
     
   }
-  
+
   useEffect(() => {
     document.body.classList.toggle('dark', theme === 'dark');
   }, [theme]);
@@ -60,13 +60,14 @@ const urlApi = "https://firestore.googleapis.com/v1/projects/sonus-openapi/datab
 
       function handleSongClick(song) {
         setSelectedSong(song);
+        
       }
   //função utilizada pelo navbar para filtar os sons por categoria
   return (  
     <>
         <Header   theme={theme} setTheme={setTheme}  filterSongsByCategory={filterSongsByCategory} />
         <Grid songs={filteredSongs} onSongClick={handleSongClick} />
-        <Footer selectedSong={selectedSong}/>
+        <Footer selectedSong={selectedSong} />
     </>
   )
   }
