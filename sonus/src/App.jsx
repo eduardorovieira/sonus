@@ -1,4 +1,4 @@
-import {useState, useRef, useEffect} from 'react';
+import {useState, useRef, useEffect, useLayoutEffect} from 'react';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import NavBar from './components/NavBar';
@@ -9,7 +9,10 @@ function App() {
 const urlApi = "https://firestore.googleapis.com/v1/projects/sonus-openapi/databases/(default)/documents/playlist";
 
 //estados
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState(() => {
+      const saveTheme = localStorage.getItem('theme');
+      return saveTheme ? saveTheme : 'light';
+  });
   
   const [allSongs, setAllSongs] = useState([]);
   const [filteredSongs, setFilteredSongs] = useState([]);
@@ -33,8 +36,9 @@ const urlApi = "https://firestore.googleapis.com/v1/projects/sonus-openapi/datab
     
   }
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     document.body.classList.toggle('dark', theme === 'dark');
+    localStorage.setItem('theme', theme);
   }, [theme]);
 
   useEffect (() => {

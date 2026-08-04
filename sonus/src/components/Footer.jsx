@@ -4,18 +4,26 @@ import PlayButtonIcon from '../icons/PlayButtonIcon';
 import PauseButtonIcon from '../icons/PauseButtonIcon';
 
 function Footer({ selectedSong }) {
+  // refs para os dois elementos de audio
   const audio1Ref = useRef(null);
   const audio2Ref = useRef(null);
   const activeAudioRef = useRef(0);
+
+  // ref para o intervalo de fade
   const fadeIntervalRef = useRef(null);
+
+  // estado para controlar se o áudio está tocando ou pausado
   const [isPlaying, setIsPlaying] = useState(false);
 
+
+  // dados do som selecionado
   const selectedSongData = {
     title: selectedSong?.fields?.titulo?.stringValue || "Nenhum som selecionado",
     image: selectedSong?.fields?.url_capa?.stringValue || null,
     audio: selectedSong?.fields?.url_audio?.stringValue || null
   };
 
+  // funções para obter a referência do player de áudio ativo e inativo
   function getActiveAudioRef() {
     return activeAudioRef.current === 0 ? audio1Ref : audio2Ref;
   }
@@ -24,6 +32,7 @@ function Footer({ selectedSong }) {
     return activeAudioRef.current === 0 ? audio2Ref : audio1Ref;
   }
 
+  // função para resetar os players de áudio para evitar comportamento estranho ao selecionar um novo som
   function resetPlayers() {
     const audio1 = audio1Ref.current;
     const audio2 = audio2Ref.current;
@@ -48,6 +57,7 @@ function Footer({ selectedSong }) {
     activeAudioRef.current = 0;
   }
 
+  // função para fazer o fade do player antigo e player novo
   function fadeOut(oldPlayer, newPlayer) {
     let steps = 0;
     const allSteps = 20;
@@ -73,6 +83,7 @@ function Footer({ selectedSong }) {
     fadeIntervalRef.current = fadeInterval;
   }
 
+  // função para alternar entre os players de áudio
   function switchPlayers() {
     const oldPlayer = getActiveAudioRef().current;
     const newPlayer = getInactiveAudioRef().current;
@@ -93,6 +104,7 @@ function Footer({ selectedSong }) {
     };
   }
 
+  // função para configurar o loop infinito com o fade entre os players
   function setLoopFade(player) {
     player.ontimeupdate = () => {
       const fadeDuration = 4;
@@ -104,6 +116,7 @@ function Footer({ selectedSong }) {
     };
   }
 
+  // função para lidar com o clique no botão de play/pause. Responsável também pela decisão de qual icone mostrar (play ou pause)
   async function handlePlayPause() {
     if (isPlaying) {
       audio1Ref.current.pause();
@@ -119,6 +132,7 @@ function Footer({ selectedSong }) {
     }
   }
 
+  // useEffect para lidar com a seleção de uma nova música. Quando uma nova música é selecionada, ele reseta os players, define a fonte do áudio e inicia a reprodução.
   useEffect(() => {
     if (!selectedSong) return;
 
@@ -140,6 +154,7 @@ function Footer({ selectedSong }) {
 
   }, [selectedSong]);
 
+  //conteudo html do footer
   return (
     <footer className={selectedSong === null ? "oculto" : ""}>
       <div className="footer-content">
